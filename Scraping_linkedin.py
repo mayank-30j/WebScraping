@@ -1,15 +1,17 @@
-# Importing libraries
+# Importing all the required libraries
 from selenium import webdriver
 from WebScraping_ATG import scrape
 from selenium.webdriver.common.by import By
 import warnings
 warnings.filterwarnings('ignore')
 
+# These are all the states based on which i have to scrape data from linkedin
 states = ["Andhra Pradesh","Arunachal Pradesh ", "Assam", "Bihar", "Chhattisgarh","Goa","Gujarat","Haryana",
           "Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra",
           "Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana",
           "Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh",
           "Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","National Capital Territory of Delhi","Puducherry"]
+
 jobs = scrape()  # This is a dictionary that contains job Categories as key and subcategories (in list form) as value
 # as key : value pair
 
