@@ -53,10 +53,6 @@ for state in states:
 
         search_job.send_keys('')
         search_state.send_keys('')
-exit()
 
-# artdeco-entity-lockup__subtitle   job-card-container__link
 company_name = driver.find_elements(By.CLASS_NAME, 'job-card-container__link')
 
-for i in company_name:
-    print(i.text)
