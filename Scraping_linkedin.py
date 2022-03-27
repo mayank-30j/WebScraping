@@ -3,6 +3,7 @@ from selenium import webdriver
 from WebScraping_ATG import scrape
 from selenium.webdriver.common.by import By
 import warnings
+import time
 warnings.filterwarnings('ignore')
 
 # These are all the states based on which i have to scrape data from linkedin
@@ -37,9 +38,9 @@ login_button.click()
 
 driver.get('https://www.linkedin.com/jobs/')
 
-company_name = None
 job_categories = list(jobs.keys())
 
+# this will loop through the states in list and search on linkedin based on the states
 for state in states:
     for job in job_categories:
         search_job = driver.find_element(By.CLASS_NAME, 'jobs-search-box__text-input')
@@ -53,6 +54,8 @@ for state in states:
 
         search_job.send_keys('')
         search_state.send_keys('')
+        
+        time.sleep(2)
 
 company_name = driver.find_elements(By.CLASS_NAME, 'job-card-container__link')
 
